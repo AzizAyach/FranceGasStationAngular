@@ -1,0 +1,22 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Contact Us!</h1>
+      <form (ngSubmit)="processForm()">
+
+        <div class="field">
+          <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
+        </div>
+
+        <div class="field">
+          <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
+        </div>
+
+        <div class="field">
+          <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
+        </div>
+        <button type="submit" class="button is-dark is-large">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
