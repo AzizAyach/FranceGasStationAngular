@@ -1,0 +1,15 @@
+.hero-body {
+    background-image: url('/assets/img/home.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: grow 60s linear 10ms infinite;
+    transition: all 0.2s ease-in-out;
+}

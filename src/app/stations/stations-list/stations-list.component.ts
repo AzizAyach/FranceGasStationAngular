@@ -8,6 +8,7 @@ import { StationsService } from '../../stations.service';
 })
 export class StationsListComponent implements OnInit {
   stations ;
+  prices;
   constructor(private stationService : StationsService) { }
   pageActual : number = 1;
   totalStation: number = 0 ;
@@ -25,6 +26,5 @@ export class StationsListComponent implements OnInit {
   pageChanged(event){
   this.pageActual=event;
   this.stations = this.getStationPerPage(this.pageActual);
-
 }
 }

@@ -1,14 +1,35 @@
-<nav class="navbar is-dark">
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <img src="assets/img/logo.png">
-    </a>
+<section class="hero is-dark is-medium">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="assets/img/logo.png" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarGasonline">
+          </span>
+        </div>
+        <div id="navbarMenuGasonline" class="navbar-menu">
+          <div class="navbar-end">
+              <a class="navbar-item" routerLink="">Home</a>
+              <a class="navbar-item" routerLink="station">Stations</a>
+              <a class="navbar-item" routerLink="contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" routerLink="">Home</a>
-      <a class="navbar-item" routerLink="station">Stations</a>
-      <a class="navbar-item" routerLink="contact">Contact</a>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+          Gasoline Station Online
+      </h1>
+      <h2 class="subtitle">
+          Find the nearest fuel station and price of fuel
+      </h2>
     </div>
   </div>
-</nav>
+
+ 
+</section>

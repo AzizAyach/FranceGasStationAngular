@@ -7,9 +7,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { StationsService } from './stations.service';
 import { HttpClientModule } from '@angular/common/http';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { TooltipMessageDirective } from './directive/tooltip-message.directive';
 
 @NgModule({
   declarations: [
@@ -17,15 +19,18 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    TooltipMessageDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OverlayModule
   ],
   providers: [StationsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [TooltipMessageDirective]
 })
 export class AppModule { }

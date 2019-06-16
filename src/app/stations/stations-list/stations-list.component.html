@@ -1,21 +1,51 @@
 <section class="section">
+    <div class="box">
+        <div class="field has-addons">
+            <div class="control is-expanded">
+                <input class="input has-text-centered" type="search" placeholder="find by city or postal ">
+            </div>
+            <div class="control">
+                <a class="button is-dark">Search</a>
+            </div>
+        </div>
+    </div>
   <div class="container">
-  <div class="columns is-multiline">
-
-    <!-- loop over our users and give them each a card -->
-    <div class="column is-6" *ngFor="let station of stations | paginate: { itemsPerPage: 10, currentPage: pageActual ,totalItems: totalStation,id:'stationPage'}">
-        <div class="card">
+    <div class="columns is-multiline">
+      <!-- loop over our users and give them each a card -->
+      <div class="column is-6"
+        *ngFor="let station of stations | paginate: { itemsPerPage: 10, currentPage: pageActual ,totalItems: totalStation,id:'stationPage'}">
+        <div class="card large ">
           <div class="card-content">
-            {{ station.adresse }} 
-          </div>      
-        </div>      
-    </div>
-    <div class="column is-12">
-      <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">               
-            <pagination-controls id="stationPage"
-            (pageChange)="pageChanged($event)"></pagination-controls>
-      </nav>
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-96x96">
+                    <img src="assets/img/logo.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4 no-padding"> {{ station.adresse }} </p>
+                  <p><span class="title is-6">{{ station.ville }}</span></p>
+                  <p class="subtitle is-6">{{ station.postal }}</p>
+                </div>
+              </div>
+              <div class="row card-content">
+                <ul class="fuelprice columns is-12">
+                  <div classs="column is-2"*ngFor="let price of station.prices">
+                    <div class="container-price">
+                      <img class="logo-fuel" src="assets/img/sp95.png" alt="Image">
+                      <div class="centered price-value">{{price.priceValue}}€</div>
+                    </div>
+                  </div>
+                </ul>
+              </div>       
+          </div>
+        </div>
+      </div>
+      <div class="column is-12">
+        <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+          <pagination-controls id="stationPage" (pageChange)="pageChanged($event)"></pagination-controls>
+        </nav>
+      </div>
     </div>
   </div>
-  </div>
-  </section>
+</section>
